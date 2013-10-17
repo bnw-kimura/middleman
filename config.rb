@@ -2,7 +2,7 @@
 # Blog settings
 ###
 
-# Time.zone = "UTC"
+Time.zone = "Tokyo"
 
 activate :blog do |blog|
   blog.prefix = "blog/:year/:month"
@@ -23,6 +23,11 @@ activate :blog do |blog|
   # blog.paginate = true
   # blog.per_page = 10
   # blog.page_link = "page/:num"
+end
+
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.branch = 'gh-pages'
 end
 
 page "/feed.xml", :layout => false
